@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  transition: background-image 1s ease-in-out;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+}
+
+.loading {
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.9);
+}
+
+.loader {
+  margin-top: 10px;
+  background-image: url(../momentum/assets/icons/update.png);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  animation: circle 0.7s ease-out;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.3));
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.weather-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100px;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.city {
+  font-size: 2.5rem;
+  min-width: 3rem;
+}
+
+.temperature-with-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  margin-right: 5px;
+}
+
+.update-icon {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: none;
+  border: none;
+  background-image: url(../momentum/assets/icons/update.png);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.update-quote {
+  background: none;
+  border: none;
+  background-image: url(../momentum/assets/icons/update.png);
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  margin-bottom: 5px;
+}
+
+.update-quote:hover,
+.update-icon:hover {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 1;
+  animation: circle 0.7s ease-out;
+  transition: 0.7s ease-out;
+}
+
+.update-quote:active,
+.update-icon:active {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+button:focus,
+button:active {
+  outline: none;
+  border: none;
+}
+
+
+.date-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.date {
+ font-size: 6rem;
+}
+
+.time {
+  font-size: 12rem;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  align-items: center;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.name {
+  display: inline-block;
+  min-width: 3rem;
+  max-width: 50rem;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.focus-div {
+  margin-bottom: 10px;
+}
+
+.focus {
+  display: inline-block;
+  min-width: 3rem;
+  max-width: 50rem;
+  font-size: 3rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+  font-size: 3rem;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+.quote-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 700px;
+  min-height: 90px;
+  transition: all 1s;
+  font-size: 1.4rem;
+}
+
+blockquote {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+figcaption {
+  opacity: 0.7; 
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 8px;
+  }
+  .date {
+    font-size: 4rem;
+  }
+  .time {
+    font-size: 9rem;
+    width: 300px;
+  }
+  .weather-div {
+    font-size: 1.8rem;
+  }
+  .city {
+    font-size: 3rem;
+  }
+  .temperature-with-icon {
+    font-size: 2.5rem;
+  }
+  .quote-div {
+    font-size: 1.8rem;
+  }
+  blockquote {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 420px)  {
+  html {
+    font-size: 6px;
+  }
+  .date {
+    font-size: 4rem;
+  }
+  .time {
+    font-size: 9rem;
+    width: 230px;
+  }
+  .weather-div {
+    font-size: 2.4rem;
+  }
+  .city {
+    font-size: 3.5rem;
+  }
+  .temperature-with-icon {
+    font-size: 3rem;
+  }
+  .quote-div {
+    font-size: 2.4rem;
+  }
+  blockquote {
+    font-size: 2.6rem;
+  }
+}
+
+
